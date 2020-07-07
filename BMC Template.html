@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title id="pagetitle"></title>
+
+    <style type="text/css">
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #FAFAFA;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: .8em;
+        }
+        
+        h2 {
+            font-family: inherit;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        
+        ul {
+            margin: inherit;
+            padding: inherit;   
+        }
+        
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        
+        .page {
+            width: 297mm;
+            min-height: 210mm;
+            padding: 10mm;
+            margin: 10mm auto;
+            border: 1px #D3D3D3 solid;
+            border-radius: 5px;
+            background: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        @page {
+            size: landscape;
+            margin: 0;
+        }
+        
+        @media print {
+            html,
+            body {
+                width: 297mm;
+                height: 210mm;
+                writing-mode: tb-rl;
+            }
+            .page {
+                margin: 0;
+                border: initial;
+                border-radius: initial;
+                width: initial;
+                min-height: initial;
+                box-shadow: initial;
+                background: initial;
+                page-break-after: always;
+            }
+        }
+        
+        .col-100,
+        .col-50,
+        .col-20,
+        .nested {
+            float: left;
+            position: relative;
+            min-height: 1px;
+            display: block;
+            line-height: 1.42857143;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        .col-100 {
+            width: 100%;
+        }
+        
+        .col-20 {
+            width: 20%;
+            height: 125mm;
+        }
+        
+        .col-50 {
+            width: 50%;
+            height: 45mm;
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
+        }
+        
+        .nested-top,
+        .nested,
+        .nested-lower {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        
+        .nested-top {}
+        
+        .nested {
+            height: 100%;
+        }
+        
+        .nested-lower {
+            height: 45mm;
+        }
+        
+        .bordered {
+            border: 1px solid gray;
+        }
+        
+        .flexbox {
+            width: 100%;
+            height: 100%;
+            display: -webkit-flex;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .flex-top {
+            flex-grow: 1;
+        }
+        
+        .flex-top,
+        .flex-bot {
+            padding: 4px 10px 4px 15px;
+        }
+		
+    </style>
+
+</head>
+<body>
+<div class="page">
+<h2 id="bmctitle"></h2>
+        <div class="col-100 bordered">
+            <div class="col-20 bordered">
+                <div class="flexbox">
+                    <div class="flex-top">
+                        <p class="panel"><img id="Partners" src=".\images\partners.png">
+                        <ul id="partners_ul"></ul>    
+                    </div>
+                </div>
+            </div>
+            <div class="col-20">
+                <div class="flexbox">
+                    <div class="flex-top  bordered" id="activities"><img id="Activities" src=".\images\activities.png">
+                        <ul id="activities_ul"></ul> 
+                    </div>
+                    <div class="flex-bot bordered" id="resources">
+<img id="Resources" src=".\images\resources.png">
+<ul id="resources_ul"></ul> 			
+                    </div>
+                </div>
+            </div>
+            <div class="col-20  bordered">
+                <div class="flexbox">
+                    <div class="flex-top" id="propositions">
+                    <img id="Value_Porpositions" src=".\images\value.png">
+                    <ul id="propositions_ul"></ul> 
+                    </div>
+                </div>
+            </div>
+            <div class="col-20">
+                <div class="flexbox">
+                    <div class="flex-top  bordered" id="relationships">
+                    <img id="Customer_Relationships" src=".\images\relationships.png">
+                    <ul id="relationships_ul"></ul> 
+                    </div>
+                    <div class="flex-bot bordered" id="channels">
+                    <img id="Channels" src=".\images\channels.png">
+                    <ul id="channels_ul"></ul> 
+                    </div>
+                </div>
+            </div>
+            <div class="col-20   bordered">
+                <div class="flexbox">
+                    <div class="flex-top" id="segments">
+                    <img id="Customer Segments" src=".\images\segments.png">
+                    <ul id="segments_ul"></ul> 
+                    </div>
+                </div>
+            </div>
+            <div class="col-50">
+                <div class="nested-lower bordered" id="structures">
+                    <img id="Cost Structure" src=".\images\costs.png">
+                    <ul id="structures_ul"></ul> 
+                </div>
+            </div>
+            <div class="col-50">
+                <div class="nested-lower bordered" id="streams">
+                    <img id="Revenue Streams" src=".\images\revenue.png"> 
+                    <ul id="streams_ul"></ul> 
+                </div>
+            </div>
+        </div>
+	<img id="logo" src=".\images\DXC_Logo.png" ALIGN="Right">
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<!-- <script src="js/bootstrap.min.js"></script> -->
+<!-- core javascript that loads the BMC payload, parses and injects into html template -->
+<script src="payload/loader.js"></script>
+
+</body>
+</html>
